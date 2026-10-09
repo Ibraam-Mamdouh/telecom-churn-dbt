@@ -1,0 +1,29 @@
+{
+  "name": "dbt-telecom-churn",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  "postCreateCommand": "pip install --upgrade pip && pip install dbt-duckdb==1.8.* && dbt --version",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "innoverio.vscode-dbt-power-user",
+        "dbt-labs.dbt",
+        "ms-python.python",
+        "mtxr.sqltools",
+        "RandomFractionsInc.vscode-sql-formatter"
+      ],
+      "settings": {
+        "files.associations": {
+          "*.sql": "jinja-sql",
+          "*.yml": "jinja-yaml"
+        },
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+      }
+    }
+  },
+  "remoteEnv": {
+    "DBT_PROFILES_DIR": "${containerWorkspaceFolder}"
+  }
+}

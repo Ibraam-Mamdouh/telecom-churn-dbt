@@ -1,0 +1,7 @@
+telecom_churn:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: telecom_churn.duckdb
+      threads: 4

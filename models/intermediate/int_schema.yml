@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: int_customer_enriched
+    description: One row per customer, enriched with zip population and analysis segments.
+    columns:
+      - name: customer_id
+        tests: [unique, not_null]
+      - name: tenure_band
+        tests: [not_null]
+      - name: age_group
+        tests: [not_null]

@@ -1,0 +1,22 @@
+name: telecom_churn
+version: "1.0.0"
+config-version: 2
+profile: telecom_churn
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+
+models:
+  telecom_churn:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table
+
+seeds:
+  telecom_churn:
+    +quote_columns: true

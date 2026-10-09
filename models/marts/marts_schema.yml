@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: rpt_churn_by_contract
+    description: Churn rate and revenue metrics by contract type and internet type.
+  - name: rpt_churn_by_demographics
+    description: Churn metrics across demographic and behavioural segments, in long format (dimension, segment).
+  - name: rpt_churn_reasons
+    description: Breakdown of churned customers by stated category and reason.
+    columns:
+      - name: churned_customers
+        tests: [not_null]
+  - name: rpt_churn_by_geography
+    description: Churn metrics by city and zip code (zip codes with at least 10 customers).
